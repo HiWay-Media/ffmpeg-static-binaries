@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         ffmpeg: ["6.0"]
-        md5_hash: [ "47b6c5d930937413c3e308e2fdb3dfb5" ]
+        #md5_hash: [ "47b6c5d930937413c3e308e2fdb3dfb5" ]
         
     #
     steps:
@@ -37,7 +37,7 @@ jobs:
          name: upload-FFmpeg-${{ matrix.ffmpeg }}
          path: /tmp/bin/ffmpeg-${{matrix.ffmpeg}}.tar
       #
-      - name: Release FFmpeg ${{ matrix.ffmpeg }} Nvenc ${{ matrix.nvenc }}
+      - name: Release FFmpeg ${{ matrix.ffmpeg }}
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
