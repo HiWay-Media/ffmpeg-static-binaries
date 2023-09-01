@@ -176,9 +176,9 @@ download \
   "https://github.com/georgmartius/vid.stab/archive/"
 
 download \
-  "release-2.7.4.tar.gz" \
-  "zimg-release-2.7.4.tar.gz" \
-  "1757dcc11590ef3b5a56c701fd286345" \
+  "release-3.0.5.tar.gz" \
+  "zimg-release-3.0.5.tar.gz" \
+  "af2c08cc0e695f4c0c225feed14e9f20" \
   "https://github.com/sekrit-twc/zimg/archive/"
 
 download \
