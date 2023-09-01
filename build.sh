@@ -502,7 +502,7 @@ make distclean
 hash -r
 #
 mkdir -p /tmp/bin
-tar -czvf /tmp/bin/ffmpeg-${1}.tar --transform='s|.*/||' ./target/bin/ffmpeg ./target/bin/ffprobe
+tar -czvf /tmp/bin/ffmpeg-6.0.tar --transform='s|.*/||' ./target/bin/ffmpeg ./target/bin/ffprobe
 ls -l /tmp/bin
 #
-echo "Finished FFmpeg ${1}"
+echo "Finished FFmpeg 6.0"
