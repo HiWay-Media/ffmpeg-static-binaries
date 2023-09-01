@@ -27,7 +27,7 @@ jobs:
         id: build-ffmpeg
         shell: bash
         run: |
-            sudo sh build.sh ${{ matrix.ffmpeg}}
+            sh build-ubuntu.sh -j 8
       #
       - name: Upload FFmpeg ${{ matrix.ffmpeg }}
         uses: actions/upload-artifact@v3
