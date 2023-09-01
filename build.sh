@@ -212,10 +212,10 @@ download \
   "https://github.com/xiph/speex/archive/"
 
 download \
-  "n4.0.tar.gz" \
-  "ffmpeg4.0.tar.gz" \
-  "4749a5e56f31e7ccebd3f9924972220f" \
-  "https://github.com/FFmpeg/FFmpeg/archive"
+  "ffmpeg-6.0.tar.xz" \
+  "ffmpeg-6.0.tar.xz" \
+  "47b6c5d930937413c3e308e2fdb3dfb5" \
+  "https://ffmpeg.org/releases"
 
 [ $download_only -eq 1 ] && exit 0
 
@@ -273,7 +273,7 @@ cd $BUILD_DIR/x265*
 cd build/linux
 [ $rebuild -eq 1 ] && find . -mindepth 1 ! -name 'make-Makefiles.bash' -and ! -name 'multilib.sh' -exec rm -r {} +
 PATH="$BIN_DIR:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$TARGET_DIR" -DENABLE_SHARED:BOOL=OFF -DSTATIC_LINK_CRT:BOOL=ON -DENABLE_CLI:BOOL=OFF ../../source
-sed -i '' 's/-lgcc_s/-lgcc_eh/g' x265.pc
+sed -i 's/-lgcc_s/-lgcc_eh/g' x265.pc
 make -j $jval
 make install
 
@@ -413,7 +413,7 @@ make install
 
 # FFMpeg
 echo "*** Building FFmpeg ***"
-cd $BUILD_DIR/FFmpeg*
+cd $BUILD_DIR/ffmpeg*
 [ $rebuild -eq 1 -a -f Makefile ] && make distclean || true
 
 if [ "$platform" = "linux" ]; then
