@@ -500,3 +500,9 @@ PATH="$BIN_DIR:$PATH" make -j $jval
 make install
 make distclean
 hash -r
+
+#
+tar -czvf /tmp/bin/ffmpeg-${1}.tar --transform='s|.*/||' ./target/bin/ffmpeg ./target/bin/ffprobe
+ls -l /tmp/bin
+#
+echo "Finished FFmpeg ${1}"
